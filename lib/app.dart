@@ -64,7 +64,9 @@ class AuthGate extends StatelessWidget {
         }
 
         if (snapshot.hasData) {
-          return const QuizScreen();
+          return QuizScreen(
+            key: ValueKey(snapshot.data!.uid),
+          );
         }
 
         return const LoginScreen();
